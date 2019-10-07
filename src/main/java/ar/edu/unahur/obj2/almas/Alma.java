@@ -1,15 +1,15 @@
-package ar.edu.unahur.obj2;
+package ar.edu.unahur.obj2.almas;
 
 public class Alma {
     private int bondad;
     private int valor;
-    private Boolean friolenta;
+    private Boolean esFriolenta;
 
 
-    public Alma(int bondad, int valor, Boolean friolenta) {
+    public Alma(int bondad, int valor, Boolean esFriolenta) {
         this.bondad = bondad;
         this.valor = valor;
-        this.friolenta = friolenta;
+        this.esFriolenta = esFriolenta;
     }
 
     public int getBondad() {
@@ -20,8 +20,8 @@ public class Alma {
         return valor;
     }
 
-    public Boolean getFriolenta() {
-        return friolenta;
+    public Boolean getEsFriolenta() {
+        return esFriolenta;
     }
 
     public void setBondad(int bondad) {
@@ -32,7 +32,9 @@ public class Alma {
         this.valor = valor;
     }
 
-    public void setFriolenta(Boolean friolenta) {
-        this.friolenta = friolenta;
+    public void setEsFriolenta(Boolean esFriolenta) {
+        this.esFriolenta = esFriolenta;
     }
+
+
 }

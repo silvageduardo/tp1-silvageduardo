@@ -1,16 +1,17 @@
-package ar.edu.unahur.obj2;
+package ar.edu.unahur.obj2.Lugar;
 
+
+import ar.edu.unahur.obj2.almas.Alma;
 
 import java.util.HashSet;
 import java.util.Set;
 
 public class Lugar {
     private String nombre;
-    private Set<Alma> habitantes = new HashSet<>();
+    public Set<Alma> habitantes = new HashSet<>();
 
-    public Lugar(String nombre, Set<Alma> habitantes) {
+    public Lugar(String nombre) {
         this.nombre = nombre;
-        this.habitantes = habitantes;
     }
 
     public String getNombre() {
