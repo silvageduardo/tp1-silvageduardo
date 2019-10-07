@@ -22,22 +22,4 @@ public class Sombra extends Demonio {
         return super.puedeCazarA(alma) && alma.getValor() < 50;
     }
 
-    @Override
-    public void cazar(Lugar lugar) {
-        Iterator<Alma> iterator = lugar.getHabitantes().iterator();
-        while (iterator.hasNext()){
-            Alma persona = iterator.next();
-            if(  puedeCazarA(persona)){
-                listaPersonasCazadas.add(persona);
-                iterator.remove();
-            }else {
-                listpaPersonasAtormentadas.add(persona); //almas jodidas
-            }
-            listpaPersonasAtormentadas.stream().forEach(alma -> {
-                atormentarA(alma);
-            });
-        };
-        this.setNivelMaldad( this.getNivelMaldad() + listpaPersonasAtormentadas.size() + listaPersonasCazadas.size()*2);
-        listpaPersonasAtormentadas.clear();
-    }
 }

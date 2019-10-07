@@ -36,7 +36,23 @@ public abstract class Demonio {
         return nivelMaldad > alma.getBondad();
     }
 
-    public abstract void cazar(Lugar lugar );
+    public void cazar(Lugar lugar ){
+        Iterator<Alma> iterator = lugar.getHabitantes().iterator();
+            while (iterator.hasNext()){
+                Alma persona = iterator.next();
+                if(  puedeCazarA(persona)){
+                    listaPersonasCazadas.add(persona);
+                    iterator.remove();
+                }else {
+                    listpaPersonasAtormentadas.add(persona); //almas jodidas
+                }
+                listpaPersonasAtormentadas.stream().forEach(alma -> {
+                    atormentarA(alma);
+                });
+            };
+        this.setNivelMaldad( this.getNivelMaldad() + listpaPersonasAtormentadas.size() + listaPersonasCazadas.size()*2);
+        listpaPersonasAtormentadas.clear();
+    }
 
 
 
